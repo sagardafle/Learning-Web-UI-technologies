@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"> <title>CMPE-280 Assignemnt 1</title>
+<link rel="stylesheet" href="applicationstyling.css">
+<style>
+div#div2{
+	border:#000 1px solid; padding:10px 40 px 40 px 40 px;}
+	}
+
+body{
+    background-color:#000000;
+    border-radius: 20px;
+}
+
+input[type=submit] {
+    width: 10em;  height: 2em; border-radius: 10px;
+}
+
+a{
+font-size:15px;
+text-align:left;
+}
+#formdiv {
+text-align: center;
+   padding-top:10em;
+   padding-left:25em;
+    top: 200%;
+    left: 30%;
+    right: 30%;
+    bottom: 20%;
+    font-size: 18px;
+}
+#userloginform {
+   text-align: center;
+   vertical-align: middle;
+   padding-top:1em;
+	top:30px;
+	text-align: center;
+   // background-color: #ccc;
+    border-style: solid;
+    border-width: 1px;
+	width:22em;
+	height :12em;
+	border-radius: 20px;
+}
+
+
+
+	</style>
+</head>
+<body>
+<div id="container">
+<div id="nav1">
+<div id ="formdiv">
+
+  <form name="form" id ="userloginform" align="center" onsubmit="return authenticateUser()">
+  <div id ="headerbackground">
+<h4  align="center"> User Login</h4>
+</div>
+   <b> Username:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </b><input type="text" name="username" required>
+    <br />
+    <br />
+    <b>Password:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b> <input type="password" name="password" required><br><br>
+	<a id = "hreflink" href="" >Create Account/Forgot?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" id ="submitbtn" value="Login" width ="300px">
+    </form>
+</div>
+    </div>
+   <!-- <div id="main"> -->
+    </div>
+
+<script src="javascript.js">
+</script>
+</div>
+</body>
+</html>

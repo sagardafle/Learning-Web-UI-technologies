@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"> <title>Assignment1</title>
+<link rel="stylesheet" href="applicationstyling.css">
+</head>
+<style>
+input[type=submit] {
+    background-color : white;
+    width: 15em;  height: 3em; border-radius: 10px;
+}
+#markit{
+background-color: yellow;
+color: black;
+}
+#formcontent{
+border: 1px solid black ;
+border-radius: 10px ;
+-moz-border-radius: 10px ;
+-webkit-border-radius: 10px ;
+height:32em;
+}
+#questionform{
+padding: 20px 20px 20px 600px
+}
+#sourceinfo{
+padding: 1px 2px 0px 600px
+}
+</style>
+<body>
+<div id="container">
+<br>
+<h3>Page: English SCO:</h3>
+<br>
+<div id ="formcontent">
+<div id ="headerbackground">
+<h4  align="center" text-align="top"> Question 3</h4>
+</div>
+<div id="content">
+<div id="navo">
+ &nbsp;&nbsp;As per the latest twitter news, complete the article snippet given by<br>&nbsp; selecting appropriate choices
+for the blanks.<br>
+<script src="javascript.js">
+
+</script>
+<br>
+
+<form NAME="myform"  METHOD="GET">
+ <div id ="questionform">Twitter wants more cash. The Company announced two <span id="markit">$<input id="text1" type="text" name="textbox" style="border: none; border-bottom: 1px solid black;" /></span> million debt offerings in a filing today,
+ each with a potential $100 increase provided the sales are over subscribed. Assuming full tip, including the $100 million boosters, <span id="markit"> <input id="text2" type="text" name="textbox1" style="border: none; border-bottom: 1px solid black;" /></span> will raise up to $1.5 billion with the two offerings.<br><br>
+ </div>
+ <div id="sourceinfo">
+ <p>Source : http://techcrunch.com/2014/09/10/twitter-to-raise-up-to-1-5b-in-debt-offering/</p>
+ </div>
+ <table id="tab"><br>
+ <tr>
+<td id="td1"><input TYPE="radio" NAME="inputbox" VALUE="$650" onClick="testResults(this.form)" id="answer"> Option1 Mark1: $650</td>
+<td id="td2"><input TYPE="radio" NAME="inputbox1" VALUE="Twitter" onClick="testResults1(this.form)" id="radio4"> Option1 Mark2: Twitter</td>
+</tr>
+<tr>
+<td id="td3"><input TYPE="radio" NAME="inputbox" VALUE="$550" onClick="testResults(this.form)" id="radio2"> Option2 Mark1:$ 550</td>
+<td id="td4"><input TYPE="radio" NAME="inputbox1" VALUE="Facebook" onClick="testResults1(this.form)" id="answer1"> Option2 Mark2: Google</td>
+</tr>
+<tr>
+<td id="td5"><input TYPE="radio" NAME="inputbox" VALUE="$650" onClick="testResults(this.form)" id="radio3"> Option3 Mark1: $650</td>
+<td id="td6"><input TYPE="radio" NAME="inputbox1" VALUE="Google" onClick="testResults1(this.form)" id="radio6"> Option3 Mark2: Facebook</td></tr></table><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit & Next Question" onClick="return verbalvalidation()">
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Cancel & Clear Selection">
+</form></div></div>
+
+</div>
+</div>
+</body>
+</html>
