@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>testfile</title>
+<link rel="stylesheet" href="main1.css">
+</head>
+
+<body>
+<form id="form1" onSubmit="submituserdetails()">
+<div id="div1">
+<h1> Registration
+</h1>
+<h2>__________________________________________________________________________________</h2>
+</div>
+<div id="main">
+<div id="div2">
+<br><br><br><br><br>
+<table>
+<tr>
+<td><b> First Name:</b> </td><td><input type="text" id="fname" autofocus></td></tr><br>
+<td><b> Last Name:</b> </td><td><input type="text" id="lname" autofocus></td></tr><br>
+<!--<td><b> User ID:</b> </td><td><input type="text" id="uname" autofocus></td></tr><br>-->
+<tr><td><b> Email:</b></td><td> <input type="email" id="mail1" name="emailadd" placeholder="Enter your email address" required onKeyUp="matchemail()"></td></tr><br>
+<tr><td><b> Password:</b></td><td><input type="password" id="password1" name="password" placeholder="Enter your Password" required onkeyUp="verifypassword()">&nbsp;&nbsp;&nbsp;<progress id="progress3" max="100" value="0"></progress></td></tr><br>
+<tr><td><b> Confirm Password:</b></td><td> <input type="password" id="password2" name="password1" placeholder="Renter the password" required onkeyUp="matchpassword()"> <br><p id="progress1"></p></td></tr><br>
+
+
+
+<tr><td><b>Time of Birth</b> </td><td><input id="timepicker"  type="time" placeholder="" >
+
+ <tr><td><b>Local Date and Time of Birth</b> </td><td><input id="datetimepickerlocal"  type="datetime-local" placeholder="" >
+
+ <tr><td><b>SSN</b> </td><td><input id="ssn"  type="text" placeholder="Enter your Social Security Number"  required="" pattern="\d{3}-?\d{2}-?\d{4}" title="XXX-XX-XXXX">
+ 
+<tr><td><b>Phone</b> </td><td><input id="phone"  type="tel" placeholder="Enter Your Phone Number"  required="" pattern="\d{3}[\-]\d{3}[\-]\d{4}"></b> </td><td>
+
+         
+<tr><td><b>Credit Card Number</b> </td><td> <input id="ccNumber"  type="number" placeholder="Enter your credit card number" required="" pattern="[0-9]{13,16}">
+
+<tr><td><b> Security Question:</b></td><td> <select> 
+<option value="Sum of 2+3"> Sum of 2+3</option>
+<option value="Sum of 100+200"> Sum of 100+200</option>
+<option value="Sum of 21+31"> Sum of 21+31</option>
+</select></td></tr><br>
+<tr><td><b> Answer: </b> </td><td><input type="text" id="ans1" name="answer" required></td></tr><br>
+
+</table>
+<script>
+
+
+
+function submituserdetails()
+{
+	
+	sessionStorage.setItem("First Name", document.getElementById("fname").value);
+	sessionStorage.setItem("Last Name", document.getElementById("lname").value);
+	
+	sessionStorage.setItem("Email", document.getElementById("mail1").value);
+	sessionStorage.setItem("Security Answer1", document.getElementById("ans1").value);
+	
+	
+	sessionStorage.setItem("Security Answer2", document.getElementById("ans2").value);
+	
+	
+	
+	sessionStorage.setItem("Time of Birth", document.getElementById("timepicker").value);
+	sessionStorage.setItem("Local Date and Time of Birth", document.getElementById("datetimepickerlocal").value);
+	sessionStorage.setItem("SSN", document.getElementById("ssn").value);
+	sessionStorage.setItem("Phone", document.getElementById("phone").value);
+	sessionStorage.setItem("Credit Card Number", document.getElementById("ccNumber").value);
+	
+	
+	
+}
+
+
+function matchpassword() {
+    var y = document.getElementById("password1");
+	var z = document.getElementById("password2");
+	if((password1.value == password2.value) && (password1.value !==""))
+    {document.getElementById("progress1").innerHTML = "Passwords match";
+	}
+	if(password1.value!== password2.value)
+	{document.getElementById("progress1").innerHTML = "Passwords not matching";
+	}
+}
+
+
+function verifypassword(){
+	
+		
+	var counter=0;
+	var c = document.getElementById("password1");
+	if(password1.value.length>6) //Length greater than 6
+	counter++;
+	if ( ( password1.value.match(/[a-z]/) ) && ( password1.value.match(/[A-Z]/) ) ) // One Caps and One small
+	counter++;
+		if ( password1.value.match(/[0-9]/) ) // One numeric value
+	counter++;
+	if ( password1.value.match(/[.,!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) //One Symbol
+	counter++;
+	if  ( password1.value.match(/[a-zA-Z]{4,}/) )
+	counter++;
+	
+	if(counter==5)
+	{
+		progress3.value="100";
+	}
+	if(counter==4)
+	{
+		progress3.value="85";
+	}
+	if(counter==3)
+	{
+		progress3.value="60";
+	}
+	if(counter==2)
+	{
+		progress3.value="40";
+	}
+	if(counter==1)
+	{
+		progress3.value="20";
+	}
+	if(counter==0)
+	{
+		progress3.value="0";
+	}
+	
+}
+
+</script>
+</div>
+<div id="div3"><br>
+<input type="submit" style="color:gray; font:bold"  padding-left="1em;" value="Create">
+
+</div>
+</div>
+</form>
+</body>
+</html>
